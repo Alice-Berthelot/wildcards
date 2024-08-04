@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="WildCardS est le trombinoscope de février 2024 de la Wild Code School de Bordeaux">
+    <title>Trombinoscope WCS Bordeaux 2024 | WildCardS</title>
+    <link rel="icon" href="images/favicon.png">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!--Header-->
+    <header>
+        <nav>
+            <a href="index.html" id="backButtonMobile">
+                <img src="images/arrow-left-svgrepo-com.svg" class="arrow_back">
+            </a>
+            <a href="index.html" id="backButtonDesktop">
+                <img src="images/sparkles-light.svg" class="sparkles_light">
+                <p class="backButton">RETOUR</p>
+            </a>
+            <img src="images/logowildCard.svg" alt="logo with the name of the website written" class="logoWCS">
+            <div>
+                <img src="images/logopython.svg" class="logoTeam" alt="logo team">
+            </div>
+        </nav>
+    </header>
+    <!-- Main content -->
+    <main id="main">
+        <section id="homePage">
+            <p class="pmain">Bienvenue sur le jeu de cartes / trombinoscope 2024 de la Wild Code School de Bordeaux !
+            </p>
+            <h2 class="titleMain">Choisis ton Clan</h2>
+            <section class="sliderContainer">
+                <div class="slider">
+                    <!-- Carte équipe Data -->
+                    <div class="slides slides-1" id="slidesData">
+                        <a class="booster" id="boosterData"><img src="images/booster/boosterdata.png"
+                                alt="paquet de carte data"></a>
+                        <a>
+                            <h2>Team Data</h2>
+                        </a>
+                    </div>
+                    <!-- Carte équipe JS -->
+                    <div class="slides slides-2" id="slidesJS">
+                        <a class="booster" id="boosterJS"><img src="images/booster/boosterjs.png"
+                                alt="paquet de carte JS"></a>
+                        <a>
+                            <h2>Team JS</h2>
+                        </a>
+                    </div>
+                    <!-- Carte équipe Staff -->
+                    <div class="slides slides-3" id="slidesStaff">
+                        <a class="booster" id="boosterStaff"><img src="images/booster/boosterstaff.png"
+                                alt="paquet de carte staff"></a>
+                        <a>
+                            <h2>Team Staff</h2>
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </section>
+        <section id="searchBar">
+            <label>
+                <!-- Création conditions loupe: <input type="search" class="searchInput" name="term" autocomplete="off" placeholder="Search..." id="search-input"> -->
+                <!-- <input type="hidden" name="language" value="fr"> -->
+                <input type="search" name="search" autocomplete="off" placeholder=" Taper un nom">
+                <img src="images/search-svgrepo-com.svg" alt="bouton rechercher">
+            </label>
+            <!-- Bouton de navigation -->
+            <ul>
+                <li>
+                    <button id="buttonData">
+                        <div id="logoButtonData"></div>
+                        <p id="textButtonData">DATA</p>
+                        <div id="logoButtonSparkle"></div>
+                        <img alt="logo of Python, for DATA" src="images/logopython.svg" class="dataLogo">
+                        <!--ajouter le lien-->
+                    </button>
+
+                </li>
+                <li>
+                    <button id="buttonJS">
+                        <div id="logoButtonJS"></div>
+                        <p id="textButtonJS">JAVASCRIPT</p>
+                        <div id="logoButtonSparkleJS"></div>
+                        <img alt="logo of JavaScript, for Web developers" src="images/logojs.svg"
+                            class="javascriptLogo">
+                        <!--ajouter le lien-->
+                    </button>
+
+                </li>
+                <li>
+                    <button id="buttonStaff">
+                        <div id="logoButtonStaff"></div>
+                        <p id="textButtonStaff">STAFF</p>
+                        <div id="logoButtonSparkleStaff"></div>
+                        <img alt="logo of Wild Code School, for Staff" src="images/logowildstaff.svg" class="staffLogo">
+                        <!--ajouter le lien-->
+                    </button>
+
+                </li>
+                <li>
+                    <button id="buttonAll">
+                        <div id="logoButtonAll"></div>
+                        <p id="textButtonAll">ALL</p>
+                        <div id="logoButtonSparkleAll"></div>
+                    </button>
+                </li>
+            </ul>
+        </section>
+        <!-- Grille de cartes -->
+        <section id="section-cards">
+            <!-- URL DE LA FLECHE CI-DESSOUS A CHANGER
+                    <a href="header">
+                        <img src="images/arrow-right.svg" alt="go back to the top" class="arrowUp">
+                    </a>  -->
+        </section>
+        <div class="zoomBlurBackground">
+            <div class="blackBackground">
+                <div class="zoomedCard">
+                    <div class="zoomedCardHeader">
+                        <p class="zoomedCardName"></p>
+                        <img src="" class="zoomedCardLogo">
+                    </div>
+                    <div class="zoomedCardImgContainer"><img src="images/photos/profilepic8.jpg" class="zoomedCardImg">
+                    </div>
+                    <div class="attackContainer">
+                        <p class="zoomedCardAttack"></p>
+                    </div>
+                </div>
+                <div class="zoomedCardInfo">
+                    <p class="cardBio"></p>
+                    <p class="cardHard"></p>
+                    <p class="cardSoft"></p>
+                    <p class="cardGoals"></p>
+                    <p class="cardEmail"></p>
+                    <div class="socialLink">
+                        <a href="" class="cardLinkedIn" target="_blank"><img src="images/logoLinkedin.svg" alt="logo LinkedIn"></a>
+                        <a href="" class="cardTwitter" target="_blank"><img src="images/logox.png" alt="logo X / Twitter"></a>
+                        <a href="" class="cardGithub" target="_blank"><img src="images/logogihub.svg" alt="logo github"></a>
+                    </div>
+                </div>
+                <img src="images/croix.svg" class="closeButton">
+            </div>
+        </div>
+        <!-- <div class="backgroundImg"><img src="images/logopythonbackground.svg"
+                        alt="image de fond avec le logo de l'équipe"></div> -->
+    </main>
+    <script type="module" src="script.js"></script>
+    <script type="module" src="search.js"></script>
+</body>
+
+</html>

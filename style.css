@@ -1,0 +1,834 @@
+@font-face {
+    font-family: "Beleren-Bold";
+    src: url('fonts/Beleren2016SmallCaps-Bold.ttf');
+    src: url('fonts/Beleren2016SmallCaps-Bold.woff') format('woff');
+}
+
+@font-face {
+    font-family: "Imprima";
+    src: url('fonts/Imprima-Regular.ttf');
+}
+
+:root {
+    --primary-color: #3A3335;
+    --secondary-color: #F7EFE0;
+    --text-color: #EBE0D1;
+    --heading-font: "Beleren-Bold";
+    --text-font: "Imprima";
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--secondary-color);
+    font-family: var(--text-font), sans-serif;
+    font-size: 1rem;
+    min-height: 100vh;
+}
+
+header {
+    background-color: var(--primary-color);
+    width: 100%;
+    height: 80px;
+    padding: 0 1rem;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+nav {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#backButtonMobile {
+    background-color: var(--secondary-color);
+    border-radius: 15px;
+    width: clamp(30px, 10%, 120px);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: .5rem;
+    max-height: 40px;
+    transition: opacity .3s;
+}
+
+#backButtonDesktop {
+    transition: all .3s;
+    display: none;
+}
+
+#backButtonDesktop:hover {
+    opacity: 0.6;
+}
+
+.arrow_back {
+    width: clamp(30px, 10%, 120px);
+}
+
+.logoWCS {
+    width: clamp(60px, 45%, 225px);
+}
+
+.logoMain {
+    width: clamp(60px, 60%, 200px);
+}
+
+.logoTeam {
+    width: clamp(30px, 75%, 120px);
+    max-height: 60px;
+    display: none;
+}
+
+nav>div {
+    display: flex;
+    justify-content: flex-end;
+}
+
+main {
+    min-height: 90vh;
+    gap: 1rem;
+    padding: 1rem 0;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 30%;
+    background-attachment: fixed;
+}
+
+.booster>img {
+    width: 12rem;
+    filter: drop-shadow(0 0.25rem 0.25rem black);
+    transition-duration: 300ms;
+}
+
+#homePage {
+    display: block;
+}
+
+/* carousel */
+
+.sliderContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: auto;
+    text-align: center;
+    padding: 0;
+}
+
+.slider {
+    display: flex;
+    overflow-x: scroll;
+    scroll-snap-type: inline mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+/* fin carousel */
+
+
+label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: clamp(200px, 100%, 350px);
+    height: 50px;
+    border: var(--primary-color) solid 1px;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+#searchBar {
+    display: none;
+    /* display flex */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    gap: 1rem;
+}
+
+label>img {
+    height: 100%;
+    background-color: var(--primary-color);
+    padding: 0.5rem;
+    border-radius: 0 15px 15px 0;
+}
+
+label>input {
+    width: 100%;
+    height: 100%;
+    border-radius: 15px 0 0 15px;
+    background-color: var(--secondary-color);
+    padding: .5rem;
+}
+
+label>img {
+    width: clamp(30px, 4vw, 80px);
+}
+
+label>img:hover {
+    cursor: pointer;
+}
+
+a {
+    text-decoration: none;
+    color: var(--text-color);
+}
+
+p {
+    font-family: var(--text-font);
+    text-align: center;
+}
+
+ul {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    list-style: none;
+    gap: .5rem;
+}
+
+li {
+    width: clamp(100px, 100%, 250px);
+    height: 50px;
+    display: flex;
+    justify-self: center;
+    align-items: center;
+    justify-content: center;
+}
+
+li>button {
+    transition: all .3s;
+}
+
+li>button:hover {
+    cursor: pointer;
+    opacity: 0.85;
+}
+
+.allLogo {
+    border-radius: 40px;
+}
+
+.titleMain {
+    font-family: var(--heading-font);
+    margin: 2rem;
+    text-align: center;
+    font-size: 2rem;
+
+}
+
+.boosterData .boosterJs .boosterStaff {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.booster {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+a>h2 {
+    font-family: var(--heading-font);
+    font-size: clamp(1.2rem, 2vw, 3.5rem);
+    text-align: center;
+    color: var(--primary-color);
+    margin-top: 1rem;
+}
+
+button {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    border-radius: 15px;
+    padding: 0.25rem;
+    width: 100%;
+    height: 100%;
+}
+
+button>p {
+    display: none;
+    font-size: clamp(1rem, 2vw, 2rem);
+}
+
+button>img {
+    max-width: clamp(45px, 6vw, 150px);
+    max-height: 100%;
+}
+
+.arrowUp {
+    max-width: 60px;
+}
+
+
+/* CARTES ET BOUTONS : */
+
+.logo-button,
+.logo-button-sparkle {
+    display: none;
+}
+
+.logo-button,
+    .logo-button-js,
+    .logo-button-staff,
+    .logo-button-all {
+        width: 20px;
+    }
+
+    .logo-button-sparkle,
+    .logo-button-sparkle-js,
+    .logo-button-sparkle-staff,
+    .logo-button-sparkle-all {
+        width: 20px;
+    }
+
+#section-cards {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+}
+
+.card {
+    width: 250px;
+    height: 350px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 15px;
+    transition: all .3s;
+    box-shadow: 2px 2px 4px 2px grey;
+}
+
+.card:hover {
+    scale: 1.05;
+    box-shadow: 4px 4px 8px 4px grey;
+    cursor: pointer;
+}
+
+.card-header {
+    width: 12rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.card-logo {
+    width: .8rem;
+    margin-top: 1.3rem;
+}
+
+.card-name {
+    margin-top: 1.4rem;
+    margin-left: .2rem;
+    color: var(--primary-color);
+    font-size: 12px;
+    font-weight: bold;
+    text-align: justify;
+}
+
+.card-img-div {
+    width: 82.5%;
+    padding-top: .4rem;
+}
+
+.card-img {
+    width: 100%;
+    height: 9.5rem;
+    object-fit: cover;
+}
+
+.card-attack {
+    padding-top: 2.9rem;
+}
+
+
+/* ZOOM */
+
+.zoomBlurBackground {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(4px);
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.blackBackground {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 3rem 1rem 1rem 1rem;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.zoomedCard {
+    width: 170px;
+    height: 240px;
+    padding: .5rem;
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.zoomedCardHeader {
+    width: 100%;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.zoomedCardName {
+    color: #3A3335;
+    font-size: 12px;
+    font-weight: bold;
+    text-align: justify;
+    padding-left: 8px;
+}
+
+.zoomedCardLogo {
+    width: 12px;
+    margin: 4px 4px;
+}
+
+.zoomedCardImgContainer {
+    width: 100%;
+    height: 45%;
+    padding: 0 8px
+}
+
+.zoomedCardImg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.attackContainer {
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.zoomedCardAttack {
+    font-size: .8rem;
+    text-align: center;
+    max-width: 90%;
+}
+
+.zoomedCardInfo {
+    max-width: 500px;
+    max-height: 50%;
+    gap: 2vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.zoomedCardInfo>p {
+    color: var(--text-color);
+}
+
+.socialLink {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.socialLink>a>img {
+    width: 30px;
+}
+
+.closeButton {
+    width: clamp(25px, 1.5vw, 50px);
+    height: clamp(25px, 1.5vw, 50px);
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+    cursor: pointer;
+}
+
+/* ZOOM */
+
+.zoomBlurBackground {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(4px);
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.blackBackground {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 3rem 1rem 1rem 1rem;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.zoomedCard {
+    width: 170px;
+    height: 240px;
+    padding: .5rem;
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.zoomedCardHeader {
+    width: 100%;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.zoomedCardName {
+    color: #3A3335;
+    font-size: 12px;
+    font-weight: bold;
+    text-align: justify;
+    padding-left: 8px;
+}
+
+.zoomedCardLogo {
+    width: 12px;
+    margin: 4px 4px;
+}
+
+.zoomedCardImgContainer {
+    width: 100%;
+    height: 45%;
+    padding: 0 8px
+}
+
+.zoomedCardImg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.attackContainer {
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.zoomedCardAttack {
+    font-size: .8rem;
+    text-align: center;
+    max-width: 90%;
+}
+
+.zoomedCardInfo {
+    max-width: 500px;
+    max-height: 50%;
+    gap: 2vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.zoomedCardInfo>p {
+    color: var(--text-color);
+}
+
+.socialLink {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.socialLink>a>img {
+    width: 30px;
+}
+
+.closeButton {
+    top: 2rem;
+    right: 2rem;
+}
+
+@media screen and (min-width: 768px) {
+
+    header {
+        padding: 0 2rem;
+    }
+
+    main {
+        padding: 2rem 0;
+    }
+
+    #backButtonMobile {
+        display: none;
+    }
+
+    #backButtonDesktop {
+        display: none;
+        font-size: clamp(1rem, 2vw, 1.7rem);
+    }
+
+    .backButton {
+        font-family: "Beleren-Bold";
+        font-size: clamp(1.2rem, 1vw, 1rem);
+        margin-top: 0;
+        padding-left: .5rem;
+    }
+
+    #searchBar {
+        padding: 0 2rem;
+        gap: 2rem;
+    }
+
+    .sparkles_light {
+        width: 1.1rem;
+        margin-top: -.3rem;
+    }
+
+    label {
+        width: 50%;
+    }
+
+    ul {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 2rem;
+    }
+
+    li>button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+    }
+
+    button>img {
+        display: none;
+    }
+
+    button>p {
+        display: inline-block;
+        color: var(--text-color);
+        font-size: clamp(1.2rem, 2vw, 2rem);
+        margin-top: 0rem;
+        font-family: "Beleren-Bold";
+        /* à modifier si on crée une variable*/
+        color: var(--text-color);
+        font-size: clamp(1.2rem, 2vw, 2rem);
+    }
+
+    .arrowUp {
+        min-width: 60px;
+    }
+
+    /* CARTES ET BOUTONS */
+
+    #buttonData,
+    #buttonJS,
+    #buttonStaff,
+    #buttonAll {
+        display: flex;
+        justify-content: center;
+    }
+
+    .logo-button,
+    .logo-button-js,
+    .logo-button-staff,
+    .logo-button-all {
+        display: block;
+        width: 1.2rem;
+        max-height: 40px;
+        padding-top: .2rem;
+        margin-right: .7rem;
+    }
+
+    .logo-button-sparkle,
+    .logo-button-sparkle-js,
+    .logo-button-sparkle-staff,
+    .logo-button-sparkle-all {
+        display: block;
+        width: 1.2rem;
+        padding-top: .2rem;
+        margin-left: .5rem;
+    }
+
+    #section-cards {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        gap: 1rem;
+        flex-wrap: wrap;
+        padding: 2rem;
+    }
+
+    .zoomBlurBackground {
+        padding: 5% 4rem;
+    }
+
+    .blackBackground {
+        flex-direction: row;
+        padding: 2rem;
+        border-radius: 40px;
+        box-shadow: 4px 4px 24px 4px;
+    }
+
+    .zoomedCard {
+        width: 289px;
+        height: 408px;
+        padding: 1.5rem;
+    }
+
+    .zoomedCardHeader {
+        width: 100%;
+        height: 26px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .zoomedCardLogo {
+        width: 24px;
+        margin: 4px 4px;
+    }
+
+    .zoomedCardImgContainer {
+        width: 100%;
+        height: 48%;
+        padding: 0 4px;
+    }
+
+    .zoomedCardInfo {
+        max-width: 50%;
+        max-height: 100%;
+        gap: 2rem;
+    }
+
+    .zoomedCardInfo>p {
+        width: 100%;
+        text-align: left;
+    }
+
+    .zoomedCardInfo>.cardEmail {
+        text-align: center;
+    }
+
+    .zoomedCardAttack {
+        font-size: 1.2rem;
+    }
+
+    .closeButton {
+        top: 2rem;
+        right: 2rem;
+    }
+}
+
+@media screen and (min-width: 846px) {
+    #section-cards {
+        justify-content: space-between;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+
+    .slides {
+        margin: 0.75rem;
+    }
+
+    .booster>img {
+        width: 15vw;
+    }
+
+    .slider {
+        overflow-x: visible;
+    }
+
+    .booster>img:hover {
+        transform: scale(1.5);
+        margin-bottom: 2rem;
+        margin-top: 3rem;
+        padding-bottom: 1rem;
+    }
+
+}
+
+
+/* Responsive ZOOM */
+
+@media screen and (min-width: 1200px) {
+
+    header {
+        padding: 0 5rem;
+    }
+
+    #searchBar {
+        padding: 0 5rem;
+    } 
+
+    #section-cards {
+        padding: 2rem 5rem;
+    }
+    
+    .zoomBlurBackground {
+        padding: 8% 10%;
+    }
+
+    .blackBackground {
+        flex-direction: row;
+    }
+
+    .zoomedCard {
+        width: 340px;
+        height: 480px;
+    }
+
+    .zoomedCardHeader {
+        height: 32px;
+        display: flex;
+    }
+
+    .zoomedCardImgContainer {
+        padding: 0 8px;
+    }
+}
