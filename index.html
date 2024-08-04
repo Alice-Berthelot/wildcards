@@ -12,7 +12,6 @@
 </head>
 
 <body>
-    <!--Header-->
     <header>
         <nav>
             <a href="index.html" id="backButtonMobile">
@@ -28,7 +27,6 @@
             </div>
         </nav>
     </header>
-    <!-- Main content -->
     <main id="main">
         <section id="homePage">
             <p class="pmain">Bienvenue sur le jeu de cartes / trombinoscope 2024 de la Wild Code School de Bordeaux !
@@ -36,7 +34,6 @@
             <h2 class="titleMain">Choisis ton Clan</h2>
             <section class="sliderContainer">
                 <div class="slider">
-                    <!-- Carte équipe Data -->
                     <div class="slides slides-1" id="slidesData">
                         <a class="booster" id="boosterData"><img src="images/booster/boosterdata.png"
                                 alt="paquet de carte data"></a>
@@ -44,7 +41,6 @@
                             <h2>Team Data</h2>
                         </a>
                     </div>
-                    <!-- Carte équipe JS -->
                     <div class="slides slides-2" id="slidesJS">
                         <a class="booster" id="boosterJS"><img src="images/booster/boosterjs.png"
                                 alt="paquet de carte JS"></a>
@@ -52,7 +48,6 @@
                             <h2>Team JS</h2>
                         </a>
                     </div>
-                    <!-- Carte équipe Staff -->
                     <div class="slides slides-3" id="slidesStaff">
                         <a class="booster" id="boosterStaff"><img src="images/booster/boosterstaff.png"
                                 alt="paquet de carte staff"></a>
@@ -65,12 +60,9 @@
         </section>
         <section id="searchBar">
             <label>
-                <!-- Création conditions loupe: <input type="search" class="searchInput" name="term" autocomplete="off" placeholder="Search..." id="search-input"> -->
-                <!-- <input type="hidden" name="language" value="fr"> -->
                 <input type="search" name="search" autocomplete="off" placeholder=" Taper un nom">
                 <img src="images/search-svgrepo-com.svg" alt="bouton rechercher">
             </label>
-            <!-- Bouton de navigation -->
             <ul>
                 <li>
                     <button id="buttonData">
@@ -78,7 +70,6 @@
                         <p id="textButtonData">DATA</p>
                         <div id="logoButtonSparkle"></div>
                         <img alt="logo of Python, for DATA" src="images/logopython.svg" class="dataLogo">
-                        <!--ajouter le lien-->
                     </button>
 
                 </li>
@@ -89,7 +80,6 @@
                         <div id="logoButtonSparkleJS"></div>
                         <img alt="logo of JavaScript, for Web developers" src="images/logojs.svg"
                             class="javascriptLogo">
-                        <!--ajouter le lien-->
                     </button>
 
                 </li>
@@ -99,7 +89,6 @@
                         <p id="textButtonStaff">STAFF</p>
                         <div id="logoButtonSparkleStaff"></div>
                         <img alt="logo of Wild Code School, for Staff" src="images/logowildstaff.svg" class="staffLogo">
-                        <!--ajouter le lien-->
                     </button>
 
                 </li>
@@ -112,12 +101,7 @@
                 </li>
             </ul>
         </section>
-        <!-- Grille de cartes -->
         <section id="section-cards">
-            <!-- URL DE LA FLECHE CI-DESSOUS A CHANGER
-                    <a href="header">
-                        <img src="images/arrow-right.svg" alt="go back to the top" class="arrowUp">
-                    </a>  -->
         </section>
         <div class="zoomBlurBackground">
             <div class="blackBackground">
@@ -147,8 +131,6 @@
                 <img src="images/croix.svg" class="closeButton">
             </div>
         </div>
-        <!-- <div class="backgroundImg"><img src="images/logopythonbackground.svg"
-                        alt="image de fond avec le logo de l'équipe"></div> -->
     </main>
     <script type="module" src="script.js"></script>
     <script type="module" src="search.js"></script>

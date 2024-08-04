@@ -1,4 +1,15 @@
-import database from "./data.json" assert {type: 'json'};
+// import database from "./data.json" assert {type: 'json'}; 
+// We used this type of import for our project, following our teacher's recommendation, but it does not work when running locally.
+// so I added a fetch to make it work
+
+let database;
+
+fetch('./data.json')
+  .then(response => response.json())
+  .then(data => {
+    database = data;
+  })
+  .catch(error => console.error('Error fetching JSON:', error));
 
 const zoomDisplay = document.querySelector('.zoomBlurBackground');
 const closeButton = document.querySelector('.closeButton');

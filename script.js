@@ -1,5 +1,17 @@
-import database from "./data.json" assert {type: 'json'};
 import { displayCard, closeCardWithX, closeCardDesktop } from "./zoom.js";
+
+// import database from "./data.json" assert {type: 'json'}; 
+// We used this type of import for our project, following our teacher's recommendation, but it does not work when running locally.
+// so I added a fetch to make it work
+
+let database;
+
+fetch('./data.json')
+  .then(response => response.json())
+  .then(data => {
+    database = data;
+  })
+  .catch(error => console.error('Error fetching JSON:', error));
 
 const main = document.getElementById('main');
 export const locationCards = document.getElementById("section-cards");
@@ -25,8 +37,6 @@ export function createCard(teamName) {
       card = createElement("div", locationCards, "card");
       card.style.backgroundImage = database[i].background;
       cardHeader = createElement("div", card, "card-header");
-      // ce serait mieux de créer ici un header plutôt qu'une div mais header entre
-      // en conflit avec les propriétés CSS appliquées à tous les header 
       cardName = createElement("p", cardHeader, "card-name");
       cardName.innerText = database[i].name;
       cardLogo = createElement("img", cardHeader, "card-logo");
@@ -36,7 +46,7 @@ export function createCard(teamName) {
       cardImg.src = database[i].picture;
       cardAttack = createElement("p", card, "card-attack");
       cardAttack.innerText = `Attaque :\n${database[i].attack}`;
-      card.setAttribute('data-index', i); //ajout de l'index de la carte en attribut de donnée
+      card.setAttribute('data-index', i); 
     }
   }
 };
@@ -45,8 +55,6 @@ export function createSearch(index) {
   card = createElement("div", locationCards, "card");
   card.style.backgroundImage = database[index].background;
   cardHeader = createElement("div", card, "card-header");
-  // ce serait mieux de créer ici un header plutôt qu’une div mais header entre
-  // en conflit avec les propriétés CSS appliquées à tous les header
   cardName = createElement("p", cardHeader, "card-name");
   cardName.innerText = database[index].name;
   cardLogo = createElement("img", cardHeader, "card-logo");
@@ -64,8 +72,6 @@ export function createAll() {
     card = createElement("div", locationCards, "card");
     card.style.backgroundImage = database[i].background;
     cardHeader = createElement("div", card, "card-header");
-    // ce serait mieux de créer ici un header plutôt qu'une div mais header entre
-    // en conflit avec les propriétés CSS appliquées à tous les header 
     cardName = createElement("p", cardHeader, "card-name");
     cardName.innerText = database[i].name;
     cardLogo = createElement("img", cardHeader, "card-logo");
@@ -75,7 +81,7 @@ export function createAll() {
     cardImg.src = database[i].picture;
     cardAttack = createElement("p", card, "card-attack");
     cardAttack.innerText = `Attaque :\n${database[i].attack}`;
-    card.setAttribute('data-index', i); //ajout de l'index de la carte en attribut de donnée
+    card.setAttribute('data-index', i);
   }
 };
 
@@ -259,13 +265,6 @@ addEventListener("resize", () => {
   responsiveButton(logoButtonStaff, logoButtonSparkleStaff);
   responsiveButton(logoButtonAll, logoButtonSparkleAll);
 });
-
-/// LIEN DEPUIS PAGE D'ACCUEIL QUI NE FONCTIONNE PAS : 
-// const boosterData = document.getElementById("boosterData");
-
-// boosterData.addEventListener("click", () => {
-//     createCard("DATA", "url('images/Background-card-Data-small.png')", "images/logopython.svg");
-//   });
 
 
 closeCardWithX();
