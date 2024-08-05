@@ -12,14 +12,13 @@ fetch('./data.json')
   .then(response => response.json())
   .then(data => {
     database = data;
-  })
-  .catch(error => console.error('Error fetching JSON:', error));
+  });
 
 const searchInput = document.querySelector("input");
 searchInput.addEventListener("input", (event) => {
   const searchValue = event.target.value;
   locationCards.innerHTML = "";
-  const result = database.filter((person) => {
+  database.filter((person) => {
     if (person.name.toLowerCase().includes(searchValue.toLowerCase())) {
       const index = database.indexOf(person);
       createSearch(index);

@@ -10,8 +10,7 @@ fetch('./data.json')
   .then(response => response.json())
   .then(data => {
     database = data;
-  })
-  .catch(error => console.error('Error fetching JSON:', error));
+  });
 
 const main = document.getElementById('main');
 export const locationCards = document.getElementById("section-cards");
